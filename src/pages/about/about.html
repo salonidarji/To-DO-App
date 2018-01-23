@@ -7,5 +7,22 @@
 </ion-header>
 
 <ion-content padding>
+<ion-list>
 
+      <ion-item>
+        <ion-label floating>EMAIL</ion-label>
+        <ion-input type="email" [(ngModel)]="email_id" name="email"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label floating>PASSWORD</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button (click)="onLoginClick()" color="primary" block>Login</button>
+      </div>
+	  <span><a (click)="loadSignup()"><h6>Not Registered yet!!! Sign up here...</h6></a> </span>
+</ion-list>
 </ion-content>

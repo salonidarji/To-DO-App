@@ -1,17 +1,32 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>To Do App</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+ 
+  <h2>Welcome to "To Do" App!</h2>
+  <!--
+  <ion-item>
+  <ion-input type="text" (keyup)="searchItem()" placeholder="Search..." [(ngModel)]="txtsearch" ></ion-input>
+  </ion-item>
+  -->
+	<ion-list inset>
+		<ion-item *ngFor="let item of arr">
+			<span [ngClass]="{doneStatus:item.Status=='done',pendingStatus:item.Status=='pending'}">
+			<label>{{item.Title}}</label></span>
+			
+			
+			<ion-icon name="create" item-right (click)="onEdit(item)"></ion-icon>
+			<ion-icon name="trash" item-right (click)="onClick(item)"></ion-icon>
+		</ion-item>
+		
+	</ion-list>
+	
+	 <ion-fab bottom right>
+<button ion-fab mini  (click)="addTask()"><ion-icon name="add"></ion-icon></button>
+</ion-fab>
+	
+	
 </ion-content>
